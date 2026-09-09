@@ -278,3 +278,117 @@ footer span { color: var(--muted); font-size: 13px; }
   .blocks { padding: 22px 15px; }
   .block { font-size: 13px; }
 }
+
+
+
+
+
+
+
+
+
+/* =========================
+   FAQ / ACCORDION
+   ========================= */
+
+.faq {
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+
+.faq > h2 {
+  margin-bottom: 30px;
+}
+
+.accordion {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.accordion details {
+  background: rgba(10, 10, 45, 0.65);
+  border: 1px solid #075c85;
+  border-radius: 22px;
+  padding: 0;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.accordion details[open] {
+  border-color: #00d9ff;
+}
+
+.accordion summary {
+  list-style: none;
+  cursor: pointer;
+
+  padding: 25px 30px;
+
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: 76px;
+}
+
+.accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Setinha */
+.accordion summary::after {
+  content: "+";
+  color: #00d9ff;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1;
+  margin-left: 20px;
+  flex-shrink: 0;
+}
+
+.accordion details[open] summary::after {
+  content: "−";
+}
+
+/* Texto quando abre */
+.accordion details p {
+  color: #ffffff;
+  font-size: 17px;
+  line-height: 1.6;
+
+  margin: 0;
+  padding: 0 30px 24px 30px;
+}
+
+.accordion details p + p {
+  padding-top: 0;
+}
+
+
+/* =========================
+   RESPONSIVO
+   ========================= */
+
+@media (max-width: 700px) {
+
+  .accordion {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .accordion summary {
+    padding: 22px;
+    font-size: 18px;
+  }
+
+  .accordion details p {
+    padding-left: 22px;
+    padding-right: 22px;
+    font-size: 16px;
+  }
+}
